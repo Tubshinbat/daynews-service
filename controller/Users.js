@@ -37,40 +37,36 @@ exports.oldUser = asyncHandler(async (req, res, next) => {
 
 exports.getJwt = asyncHandler(async (req, res, next) => {
   const privateKey = `-----BEGIN PRIVATE KEY-----
-MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCi1mRXMuenSMJV
-6xEV5SOEVa4BlMUMOh1li5tmkIOSZHMQUIIf6DmleglXOvAawMaKx5NG6vblo1Qr
-BNDXLiBo7YrSzm0bVgCtAnXNaHiRWarh0VyxJMyG75Tro4876E7oZknuN812aqTN
-U2InZiEkWUtn8dMitQ2KiT0oGrBQky4zILdZKZaw2yZjisYbeNI+eU6VkBwvqXzR
-QfihzctWj4Lu3eiKf7KMOU7Oa61cl7ZqqDP24f4yvPSjsfS8M84T6Vnwv5hz7Dbg
-4xUl+hIOsTbRmM1PfP8Ez2j2nQO35vz/VaqaA40fEV7HEsD42nIZ+jpPjOoIX9xQ
-0cQqqBTlAgMBAAECggEAFk6sfE2a8o3DIaYMNyWm0fAy4ECTJfOoJ0sSxOAzRhDA
-upFs4hYcH5EySmLmlaOnD0f74xE5NYhEdYg5W+ETy4wPIoXo6H/Fo+3cWYFgUvkn
-sbvOqO3TnwCfNBC6BIj0ll287wdx/DDr1rz/i0owbBxXeivksrJ+4mWenSna0Y7A
-JBlOksooUYk3zmQChLWcnI+ia6xcT9Sw/Dyz3Twoyu/mxBrH5ggSJFHNMCpauUn8
-hbaWRPxgycHBsu+cQ0sos+R/xUfNxvSoJrUhMujk/hSZI8sA9+ddQx1/4vkqm7rM
-coTJelmNTEaO8156uBME/aVQ0fgSws1Q6ji5UmcoGQKBgQDSd/ZB4iZX4oredBbz
-0zLB+488g8T11bKy/wqKqhqa5E+cWkktKtoC0RUjVasFZcGz7X/ipVzlDT9octAA
-mqtMpUg1J2MOwYsJbsHNPTzcM0YF4n0xMlyOWByb5zNQ5YQdCnBoTa11yPS08Wrs
-h6Em194B/ngT7wbEGRDPrEejpwKBgQDGEI2OCpS/+9XcKb2XEQJyhCXO6PBjw/N1
-G5BVcnsvyad4+MrooYQI6YHEbCmQFFs7smPppzcIbu1lRySzF8xBXAEEkmX5c1nY
-qbIxRI1PNPb9Xol7S+/9aCDze9nFYzKuTfBD+gPdzLwi9vnytWFMJteLbWYjSlVI
-In4S6iWEkwKBgBcLm6NLJ/enjp0dCQZZsc0bxmtR4lcotxBybK0SQyeCqFTubeTM
-NGLqke30i21j3vncn4wpnypVcQP2zl/Cj88sqeNoFKig+KBnyEC429kgpCIw0pR4
-dzn+2+MWRcAt4XFsmzJQjxW+k0zcwmBz2WlvaZe+TVehbJQ8SmLy8kUxAoGALfq9
-wdG3AnKGDRwrhRxPwyHmXQg6dg6RQAhsE0oGSuu3Ux/+is6kBiWfGGg7pdTz8QHS
-q/VDk1OdDLvdSy4lHq8rFVKfFa+vldqfIUzWuSKEjAEcTWEtj1hS/fMsdOQ4abpy
-InWx3BWhP0SydaOhuLnzo8x7v4mMDrjjJ6TvnL0CgYEAyZ6hSPs2ylhYJvDXAF3+
-D8gLkz+T+a1NACBa3V3iZxRO6oNnYJLyeaM3TKE6dzKQvs38AZnYSm4vXzHxlgo/
-OcQSXsikSL9OV8DBs4dg11sHOJznV4O3ijnZfjQfbgVddkprvVnbZDlv0vZRUpDg
-mcljrmvbuy8H1sxKTY56Rbg=
------END PRIVATE KEY-----`;
+  MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDH1tQ6u4TmAjsl
+  sUkhybQbIxy2IzCUe2+ZGvMs1smHvmOj6pytcg0ua+6pU1itdZK5bAMztP4lUf3K
+  0JV72QghdbMqGkemMLBl7BnQ1/nszciSodkeo36Fhn7gQEIdL6yYrJtyDuVGpKHr
+  Z6TdPjhB2G8+GgQE2WBLgL+k+B8FmKP/BCLuhDZf6kKsps550U/gFTraFp9TJ04h
+  I8Sn2Y7BCDuMKhSY3YmeJmk+v2OckHx8k7dwqCLtG9pYGvoycOcC7zvNJ7VdKbvT
+  ohKC4KpH2px/EA19bpiKC2DDlR6QLTT7SJ5KdTomJvr/uS1Tvv0JsJ1cQkvBm/15
+  xfvL3ZfRAgMBAAECggEAW2IY4Na5Wjjw9TaR+7px+ureiUekQnIDwV66jumVdNaS
+  V/XEOehqsKy4kYPEjGW0d8g12qJMiaJpzSH/CYhgmHRrPriPxSaEs8b4szDgX/Jm
+  Yu9SCxm2lLbBNCkOUqxnX9Wmq8y1+cz1ImHd2TJHpYykqiBZcCI7T6uLd5PjE7o/
+  Dg/XHnYrVXTT4o+dLVEbrBmfSZFsJUBxErJbsX82Ak+iMZKQg6LNQQjYxRLbvuTB
+  VGsI4oxOZQX5dGHnkCNa1AEpPIzycGprN8CE1t8xl/RFdV+/Jar3RVNoRO56xuZU
+  6kylW1aqyFfsKc4gD/a87QURf5ZJaCIR1DPCLd29pQKBgQDxdy8D87Q90Aq6PtGX
+  0tYGkFU5sQZudWEyEUL5y17XDHPwCZh9+lGzwoHy+k7grOCcIE5jWJ8fa5H0aT9Q
+  SwazW54i/gxJf5G+xvI/CTenqms+EecWFdDs3hL7N1SbFVrgI5n+y/WrK28gS8kz
+  V2K9PMkt3lFMKxn/C1GSwX+q9wKBgQDT3jYzfKRoXXBakkcrC0f8jMXPVRVesHGz
+  pmeEG5b0Iv+QJy/ONcHBItcpT8uSi4ASlAxKNtP8BS/x9RUM5hDePvlxmUOp3rsk
+  gRw0NjyUoibGKCnKYk9syCmEfkMYh1fusKGQo7L9ZS6AJlcQfl19IGu5OOfOnLSQ
+  VEj6jQUZdwKBgHADe/n3Wcu68N8JOS2XDtYoqoCC0Jr5NMeHHmzGnQ5hpn7Z1LXM
+  I46iUqom1+R+DgwfKH4JpHds7V5WXJqg01Ds1WUiOQz3cuLvY30+h2TuN6WppGuo
+  Xy0ir+d9+W+f7nI/0bZTY3muQnTW81Uv2owy4Ji4ozoUXJDl7UeJH/JtAoGBAJKk
+  nl1aqyz1Z5u43XuEjmnWQd/0oxrsA3b1+XYt5njKdJshFGylNptocwZMDbo7xgSV
+  5j/D3Uv1hy7wlIZeA1Tgv6SKEZRU7rEgkBXvaFT0OuQyzmIfU5wWmu3yupwSqaEz
+  LlC/jVboHpxibSakYC8ILqeAJKoUOsIfJHgO/XWXAoGAKFIUwgMIFeZWWLz0Ni7o
+  SXEZs2r9MzgTu6Bf3HNA5L2tyqc7HS2/ZIFOH1lp6+vt7UqvrX9dAJ8/pEh1i8NI
+  Tz4DmfUmK8GkAHEyL8mK42Xb73tfalcXffcnDCkhmMnEHZTMNeukBb1O0v8drazm
+  UVtvZgHBHyPX/919VrqHHcE=
+  -----END PRIVATE KEY-----`;
   const payload = {
-    sub: "123", // Unique user id string
+    sub: req.userId,
     name: "Tuvshinbat Bayandelger", // Full name of user
-
-    // Optional custom user root path
-    // 'https://claims.tiny.cloud/drive/root': '/johndoe',
-
     exp: Math.floor(Date.now() / 1000) + 60 * 10, // 10 minutes expiration
   };
 
@@ -261,7 +257,7 @@ exports.login = asyncHandler(async (req, res, next) => {
     httpOnly: false,
   };
 
-  res.status(200).cookie("zayatoken", token, cookieOption).json({
+  res.status(200).cookie("daynews", token, cookieOption).json({
     success: true,
     token,
     user,
@@ -305,7 +301,7 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
     httpOnly: false,
   };
 
-  res.status(200).cookie("zayatoken", token, cookieOption).json({
+  res.status(200).cookie("daynews", token, cookieOption).json({
     success: true,
     token,
     user,
@@ -313,7 +309,7 @@ exports.loginUser = asyncHandler(async (req, res, next) => {
 });
 
 exports.getUseInfo = asyncHandler(async (req, res, next) => {
-  const token = req.cookies.zayatoken;
+  const token = req.cookies.daynews;
   const tokenObject = jwt.verify(token, process.env.JWT_SECRET);
 
   if (req.userId !== tokenObject.id) {
@@ -335,7 +331,7 @@ exports.getUseInfo = asyncHandler(async (req, res, next) => {
 });
 
 exports.getUserPasswordChange = asyncHandler(async (req, res, next) => {
-  const token = req.cookies.zayatoken;
+  const token = req.cookies.daynews;
   const tokenObject = jwt.verify(token, process.env.JWT_SECRET);
 
   if (req.userId !== tokenObject.id) {
@@ -364,7 +360,7 @@ exports.getUserPasswordChange = asyncHandler(async (req, res, next) => {
 });
 
 exports.getUseUpdate = asyncHandler(async (req, res, next) => {
-  const token = req.cookies.zayatoken;
+  const token = req.cookies.daynews;
   const tokenObject = jwt.verify(token, process.env.JWT_SECRET);
 
   if (req.userId !== tokenObject.id) {
@@ -398,7 +394,7 @@ exports.getUseUpdate = asyncHandler(async (req, res, next) => {
 });
 
 exports.tokenCheckAlways = asyncHandler(async (req, res, next) => {
-  const token = req.cookies.zayatoken;
+  const token = req.cookies.daynews;
 
   if (!token) {
     throw new MyError("Уучлаарай хандах боломжгүй байна..", 400);
@@ -423,7 +419,7 @@ exports.logout = asyncHandler(async (req, res, next) => {
     expires: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000),
     httpOnly: false,
   };
-  res.status(200).cookie("zayatoken", null, cookieOption).json({
+  res.status(200).cookie("daynews", null, cookieOption).json({
     success: true,
     data: "logout...",
   });
@@ -810,8 +806,6 @@ exports.resetPassword = asyncHandler(async (req, res, next) => {
     resetPasswordExpire: { $gt: Date.now() },
   });
 
-
-
   if (!user) {
     throw new MyError(
       req.body.email + "Баталгаажуулах код хүчингүй байна дахин авна уу.",
@@ -865,7 +859,6 @@ const deleteImage = (filePaths) => {
   if (filePaths) {
     const filePath = filePaths;
     try {
-    
       fs.unlinkSync(process.env.FILE_AVATAR_UPLOAD_PATH + "/" + filePath);
       fs.unlinkSync(
         process.env.FILE_AVATAR_UPLOAD_PATH + "/150x150/" + filePath

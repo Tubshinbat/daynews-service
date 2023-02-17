@@ -37,6 +37,7 @@ router.route("/logout").get(protect, logout);
 router.route("/checktoken").post(tokenCheckAlways);
 router.route("/delete").delete(protect, authorize("admin"), multDeleteUsers);
 router.route("/jwt").post(getJwt);
+
 router
   .route("/excel")
   .get(protect, authorize("admin", "operator"), getFullData);

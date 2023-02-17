@@ -18,16 +18,10 @@ const uploadRouters = require("./routes/imageUpload");
 const webInfoRouters = require("./routes/WebInfo");
 const newsRouters = require("./routes/News");
 const newsCategoriesRouters = require("./routes/NewsCategories");
-const platformRouters = require("./routes/Platform");
-const serviceRouters = require("./routes/Services");
-const costTypeRouters = require("./routes/CostType");
-const costRouters = require("./routes/Cost");
-const adsRouters = require("./routes/Ads");
-const partnerRouters = require("./routes/Partner");
-const faqRouters = require("./routes/Faqs");
-const galleryRouters = require("./routes/Gallery");
+const newsCommentsRouters = require("./routes/NewsComment");
+const homePositionRouters = require("./routes/HomePosition");
+const reactionRouters = require("./routes/Reaction");
 const socialLinkRouters = require("./routes/SocialLink");
-const bannerRouters = require("./routes/Banners");
 const adsBannerRouters = require("./routes/AdsBanner");
 const menuRouters = require("./routes/Menu");
 const footerRouters = require("./routes/FooterMenu");
@@ -43,24 +37,7 @@ const app = express();
 connectDB();
 
 // Манай рест апиг дуудах эрхтэй сайтуудын жагсаалт :
-var whitelist = [
-  "http://localhost:3000",
-  "http://localhost:3001",
-  "http://192.168.1.5",
-  "http://192.168.1.5:3000",
-  "http://192.168.10.103:3000",
-  "http://192.168.10.103:3001",
-
-  "https://barilga.lvg.mn",
-  "https://www.barilga.lvg.mn",
-  "https://admin-barilga.lvg.mn",
-  "https://www.admin-barilga.lvg.mn",
-
-  "https://barilga.gov.mn",
-  "https://www.barilga.gov.mn",
-  "https://admin-barilga.gov.mn",
-  "https://www.admin-barilga.gov.mn",
-];
+var whitelist = ["http://localhost:3000", "http://localhost:3001"];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
 var corsOptions = {
@@ -112,19 +89,13 @@ app.use(morgan("combined", { stream: accessLogStream }));
 // REST API RESOURSE
 app.use("/api/v1/users", userRouters);
 app.use("/api/v1/news", newsRouters);
-app.use("/api/v1/platforms", platformRouters);
 app.use("/api/v1/webinfo", webInfoRouters);
 app.use("/api/v1/news-categories", newsCategoriesRouters);
+app.use("/api/v1/newscomments", newsCommentsRouters);
+app.use("/api/v1/reactions", reactionRouters);
+app.use("/api/v1/homepositions", homePositionRouters);
 app.use("/api/v1/imgupload", uploadRouters);
-app.use("/api/v1/services", serviceRouters);
-app.use("/api/v1/costtypes", costTypeRouters);
-app.use("/api/v1/costs", costRouters);
-app.use("/api/v1/adsies", adsRouters);
-app.use("/api/v1/partners", partnerRouters);
-app.use("/api/v1/faqs", faqRouters);
-app.use("/api/v1/gallerys", galleryRouters);
 app.use("/api/v1/slinks", socialLinkRouters);
-app.use("/api/v1/banners", bannerRouters);
 app.use("/api/v1/adsbanners", adsBannerRouters);
 app.use("/api/v1/menus", menuRouters);
 app.use("/api/v1/footermenus", footerRouters);

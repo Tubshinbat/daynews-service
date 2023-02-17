@@ -14,7 +14,7 @@ const MenuSchema = new mongoose.Schema({
     default: false,
   },
 
-  isModel: {
+  isNewsCategory: {
     type: Boolean,
     enum: [true, false],
     default: false,
@@ -45,20 +45,9 @@ const MenuSchema = new mongoose.Schema({
   parentId: {
     type: String,
   },
-
-  model: {
-    type: String,
-    enum: [
-      "news",
-      "announce",
-      "platforms",
-      "services",
-      "costs",
-      "partners",
-      "faq",
-      "gallerys",
-      "contacts",
-    ],
+  newsCategory: {
+    type: mongoose.Schema.ObjectId,
+    ref: "NewsCategories",
   },
 
   page: {

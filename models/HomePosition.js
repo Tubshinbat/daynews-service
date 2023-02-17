@@ -1,21 +1,19 @@
 const mongoose = require("mongoose");
-const { transliterate, slugify } = require("transliteration");
 
-const CostTypeSchema = new mongoose.Schema({
+const HomePositionSchema = new mongoose.Schema({
+  status: {
+    type: Boolean,
+    enum: [true, false],
+    default: true,
+  },
+
   name: {
     type: String,
   },
 
-  picture: {
-    type: String,
-  },
-
-  slug: {
-    type: String,
-  },
-
-  parentId: {
-    type: String,
+  newsCategory: {
+    type: mongoose.Schema.ObjectId,
+    ref: "NewsCategories",
   },
 
   position: {
@@ -41,4 +39,4 @@ const CostTypeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("CostType", CostTypeSchema);
+module.exports = mongoose.model("HomePosition", HomePositionSchema);

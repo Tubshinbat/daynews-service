@@ -1,8 +1,6 @@
 const Page = require("../models/Page");
 const Menu = require("../models/Menu");
-const Platform = require("../models/Platform");
-const Services = require("../models/Service");
-const Partner = require("../models/Partner");
+
 const FooterMenu = require("../models/FooterMenu");
 const User = require("../models/User");
 const NewsCategories = require("../models/NewsCategories");
@@ -62,23 +60,17 @@ const newsCategorySearch = async (key) => {
 };
 
 const platformSearch = async (key) => {
-  const ids = await Platform.find({
-    name: { $regex: ".*" + key + ".*", $options: "i" },
-  }).select("_id");
+  const ids = [];
   return ids;
 };
 
 const serviceSearch = async (key) => {
-  const ids = await Services.find({
-    name: { $regex: ".*" + key + ".*", $options: "i" },
-  }).select("_id");
+  const ids = [];
   return ids;
 };
 
 const partnerSearch = async (key) => {
-  const ids = await Partner.find({
-    name: { $regex: ".*" + key + ".*", $options: "i" },
-  }).select("_id");
+  const ids = [];
   return ids;
 };
 
