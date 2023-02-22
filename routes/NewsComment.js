@@ -9,11 +9,14 @@ const {
   multDeleteComment,
   updateComment,
   getCountNewsComment,
+  getFullData,
 } = require("../controller/NewsComment");
 
 router.route("/").post(createComment).get(getComments);
 router.route("/delete").delete(protect, authorize("admin"), multDeleteComment);
 router.route("/count").get(getCountNewsComment);
+router.route("/excel").get(protect, getFullData);
+
 router
   .route("/:id")
   .get(protect, authorize("admin"), getComment)

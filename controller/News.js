@@ -13,6 +13,14 @@ exports.createNews = asyncHandler(async (req, res, next) => {
   req.body.status = (valueRequired(req.body.status) && req.body.status) || true;
   req.body.star = (valueRequired(req.body.star) && req.body.star) || false;
 
+  if (valueRequired(req.body.categories) === false) {
+    throw new MyError("Нэг ангилал сонгоно уу", 400);
+  }
+
+  if (valueRequired(req.body.pictures) === false) {
+    throw new MyError("Зураг оруулна  уу", 400);
+  }
+
   const news = await News.create(req.body);
 
   res.status(200).json({
@@ -37,7 +45,7 @@ const useSearch = async (userFirstname) => {
 
 exports.getNews = asyncHandler(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 25;
+  const limit = parseInt(req.query.limit) || 9;
   let sort = req.query.sort || { createAt: -1 };
   const select = req.query.select;
 
@@ -72,7 +80,7 @@ exports.getNews = asyncHandler(async (req, res, next) => {
 
   if (valueRequired(category)) {
     const catIds = await newsCategorySearch(category);
-    console.log(catIds);
+
     if (catIds.length > 0) {
       query.where("categories").in(catIds);
     }

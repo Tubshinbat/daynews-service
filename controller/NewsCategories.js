@@ -87,7 +87,7 @@ exports.getNewsCategory = asyncHandler(async (req, res, next) => {
 
 exports.getSlugCategory = asyncHandler(async (req, res, next) => {
   const newsCategory = await NewsCategory.findOne({})
-    .where("name")
+    .where("slug")
     .equals(req.params.slug);
 
   if (!newsCategory) {
