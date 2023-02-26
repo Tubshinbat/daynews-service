@@ -15,15 +15,6 @@ const NewsCommentSchema = new mongoose.Schema({
     ref: "News",
   },
 
-  count: {
-    type: Number,
-    default: 0,
-  },
-
-  ip: {
-    type: String,
-  },
-
   createAt: {
     type: Date,
     default: Date.now,

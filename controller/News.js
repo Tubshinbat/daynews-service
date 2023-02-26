@@ -4,7 +4,7 @@ const User = require("../models/User");
 const MyError = require("../utils/myError");
 const asyncHandler = require("express-async-handler");
 // const fs = require("fs");
-const paginate = require("../utils/paginate");
+const Paginate = require("../utils/paginate");
 const { multImages, fileUpload, imageDelete } = require("../lib/photoUpload");
 const { valueRequired } = require("../lib/check");
 
@@ -150,7 +150,7 @@ exports.getNews = asyncHandler(async (req, res, next) => {
   const clonedQuery = new qc();
   const result = await clonedQuery.count();
 
-  const pagination = await paginate(page, limit, News, result);
+  const pagination = await Paginate(page, limit, News, result);
   query.limit(limit);
   query.skip(pagination.start - 1);
   const news = await query.exec();
@@ -373,7 +373,7 @@ exports.getAllNews = asyncHandler(async (req, res, next) => {
   const clonedQuery = new qc();
   const result = await clonedQuery.count();
 
-  const pagination = await paginate(page, limit, null, result);
+  const pagination = await Paginate(page, limit, null, result);
   query.skip(pagination.start - 1);
   query.limit(limit);
 
@@ -388,17 +388,16 @@ exports.getAllNews = asyncHandler(async (req, res, next) => {
 });
 
 exports.getSlugNews = asyncHandler(async (req, res, next) => {
-  const news = await News.findOne({ slug: req.params.slug }).populate(
-    "createUser"
-  );
+  const news = await News.findOne({ slug: req.params.slug })
+    .populate("createUser")
+    .populate("categories");
 
   if (!news) {
     throw new MyError("Тухайн мэдээ олдсонгүй. ", 404);
   }
 
   news.views = news.views + 1;
-  news.update();
-
+  news.save();
   res.status(200).json({
     success: true,
     data: news,

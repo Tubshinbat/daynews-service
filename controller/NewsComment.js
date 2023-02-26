@@ -3,6 +3,7 @@ const MyError = require("../utils/myError");
 const asyncHandler = require("express-async-handler");
 const News = require("../models/News");
 const { valueRequired } = require("../lib/check");
+const Paginate = require("../utils/paginate");
 
 exports.createComment = asyncHandler(async (req, res, next) => {
   let comment = await NewsComment.create(req.body);
@@ -22,7 +23,7 @@ const newsSearch = async (key) => {
 
 exports.getComments = asyncHandler(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 25;
+  const limit = parseInt(req.query.limit) || 3;
   let sort = req.query.sort || { createAt: -1 };
   const select = req.query.select;
 
@@ -84,13 +85,13 @@ exports.getComments = asyncHandler(async (req, res, next) => {
   }
 
   query.populate("news");
-  query.select(select);
+  // query.select(select);
 
   const qc = query.toConstructor();
   const clonedQuery = new qc();
   const result = await clonedQuery.count();
 
-  const pagination = await paginate(page, limit, NewsComment, result);
+  const pagination = await Paginate(page, limit, NewsComment, result);
   query.limit(limit);
   query.skip(pagination.start - 1);
   const newsComments = await query.exec();
@@ -98,6 +99,7 @@ exports.getComments = asyncHandler(async (req, res, next) => {
   res.status(200).json({
     success: true,
     data: newsComments,
+    pagination,
   });
 });
 
@@ -225,7 +227,7 @@ exports.multDeleteComment = asyncHandler(async (req, res, next) => {
     throw new MyError("Таны сонгосон өгөгдөлүүд олдсонгүй", 400);
   }
 
-  const comments = await findComment.deleteMany({ _id: { $in: ids } });
+  const comments = await NewsComment.deleteMany({ _id: { $in: ids } });
 
   res.status(200).json({
     success: true,
