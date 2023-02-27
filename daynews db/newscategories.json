@@ -1,0 +1,211 @@
+[{
+  "_id": {
+    "$oid": "63f04b538c410cacfe6f33c0"
+  },
+  "status": true,
+  "name": "Улс төр",
+  "position": 0,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692307662"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692307662"
+    }
+  },
+  "slug": "uls-tor",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04b5d8c410cacfe6f33c5"
+  },
+  "status": true,
+  "name": "Нийгэм",
+  "position": 1,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692317070"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692317070"
+    }
+  },
+  "slug": "niygem",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04b658c410cacfe6f33ca"
+  },
+  "status": true,
+  "name": "Эдийн засаг",
+  "position": 2,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692325940"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692325940"
+    }
+  },
+  "slug": "ediyn-zasag",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04b6f8c410cacfe6f33cf"
+  },
+  "status": true,
+  "name": "Шар мэдээ",
+  "position": 3,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692335460"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692335460"
+    }
+  },
+  "slug": "shar-medee",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04b778c410cacfe6f33d4"
+  },
+  "status": true,
+  "name": "Дэлхийн мэдээ",
+  "position": 4,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692343930"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692343930"
+    }
+  },
+  "slug": "delhiyn-medee",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04b928c410cacfe6f33da"
+  },
+  "status": true,
+  "name": "Бизнес",
+  "position": 5,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692370166"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692370166"
+    }
+  },
+  "slug": "biznes",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04b9c8c410cacfe6f33df"
+  },
+  "status": true,
+  "name": "Спорт",
+  "position": 6,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692380205"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692380205"
+    }
+  },
+  "slug": "sport",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04ba78c410cacfe6f33e4"
+  },
+  "status": true,
+  "name": "Урлаг",
+  "position": 7,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692391041"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692391041"
+    }
+  },
+  "slug": "urlag",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04bb38c410cacfe6f33e9"
+  },
+  "status": true,
+  "name": "Эрүүл мэнд",
+  "position": 8,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692403078"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692403078"
+    }
+  },
+  "slug": "eruul-mend",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f04bc48c410cacfe6f33ee"
+  },
+  "status": true,
+  "name": "Энтертайнмент",
+  "position": 9,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676692420853"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676692420853"
+    }
+  },
+  "slug": "entertaynment",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f0decb8c410cacfe6f3796"
+  },
+  "status": true,
+  "name": "124",
+  "parentId": "63f04bc48c410cacfe6f33ee",
+  "position": 0,
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676730059424"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676730059424"
+    }
+  },
+  "slug": "124",
+  "__v": 0
+}]

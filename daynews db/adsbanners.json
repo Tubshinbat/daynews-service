@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "63f1253e8c410cacfe6f4adf"
+  },
+  "status": true,
+  "type": "home",
+  "picture": "1676748092615_27bc17e19e8ac8d94632760aa87113f2.png",
+  "bigPicture": "undefined",
+  "link": "undefined",
+  "createUser": {
+    "$oid": "635a57ece393ed7df65b1b20"
+  },
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676748094500"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676748094500"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f27a27e58f8c19d7e4fa1d"
+  },
+  "status": true,
+  "type": "side",
+  "picture": "1676835366192_60ca1e3f50283d31481da33941ab44c2.png",
+  "link": "undefined",
+  "createUser": {
+    "$oid": "635a57ece393ed7df65b1b20"
+  },
+  "createAt": {
+    "$date": {
+      "$numberLong": "1676835367111"
+    }
+  },
+  "updateAt": {
+    "$date": {
+      "$numberLong": "1676835367111"
+    }
+  },
+  "__v": 0
+}]
