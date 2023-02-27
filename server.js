@@ -37,7 +37,26 @@ const app = express();
 connectDB();
 
 // Манай рест апиг дуудах эрхтэй сайтуудын жагсаалт :
-var whitelist = ["http://localhost:3000", "http://localhost:3001"];
+var whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://daynews.metaldoor.mn",
+  "http://www.daynews.metaldoor.mn",
+  "https://daynews.metaldoor.mn",
+  "https://www.daynews.metaldoor.mn",
+  "https://daynews.mn",
+  "https://www.daynews.mn",
+  "http://daynews.mn",
+  "http://www.daynews.mn",
+  "http://daynews-admin.metaldoor.mn",
+  "http://www.daynews-admin.metaldoor.mn",
+  "https://daynews-admin.metaldoor.mn",
+  "https://www.daynews-admin.metaldoor.mn",
+  "http://admin.daynews.mn",
+  "http://www.admin.daynews.mn",
+  "https://admin.daynews.mn",
+  "https://www.admin.daynews.mn",
+];
 
 // Өөр домэйн дээр байрлах клиент вэб аппуудаас шаардах шаардлагуудыг энд тодорхойлно
 var corsOptions = {
